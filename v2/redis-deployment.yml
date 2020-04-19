@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: deploymemt
 metadata:
-  name: deploymentapp
+  name: redis-deployment
   labels:
-    app: replica-test
-    use: front-end
+    app: redis-dep
+    use: middleware
 spec:
   template:
    metadata:
