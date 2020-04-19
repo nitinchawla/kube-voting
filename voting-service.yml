@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: voting-service
   labels:
-    name: redis-service
+    name: voting-service
     use: voting
 spec:
   type: LoadBalancer
