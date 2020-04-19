@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: deploymemt
+metadata:
+  name: deploymentapp
+  labels:
+    app: replica-test
+    use: front-end
+spec:
+  template:
+   metadata: 
+    name: postgres-pod
+    labels:
+     app: postgres-pod
+     use: voting
+spec:
+  containers:
+  - name: postgres-app-pod
+    image: postgress:9.4
+    ports:
+    - containerPort: 5432
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-pod
